@@ -2,7 +2,7 @@ require 'open-uri'
 require 'nokogiri'
 require 'json'
 
-url = 'https://bridgereports.com/city/wichita-kansas/'
+url = 'https://bridgereports.com/pa/delaware/'
 html = open(url)
 
 doc = Nokogiri::HTML(html)
@@ -57,4 +57,4 @@ table.search('tr').each do |tr|
 end
 
 json = JSON.pretty_generate(bridges)
-File.open("wichita_bridge_data.json", 'w') { |file| file.write(json) }
+File.open("delco_bridge_data.json", 'w') { |file| file.write(json) }
